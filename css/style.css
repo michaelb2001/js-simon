@@ -1,0 +1,33 @@
+body{
+    height: 100vh;
+    background-image: url(../sfondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blocco{
+    background-color: white;
+    border: 3px solid black;
+    height:calc(100vh/5);
+    position: relative;
+}
+
+.numero{
+    position: absolute;
+    animation: enter 1s ease 0s linear;
+}
+
+@keyframes enter{
+    0%{
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%,100%);
+    }
+
+    100%{
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
