@@ -21,14 +21,39 @@ function creaElementi(){
 }
 
 function generaNumeri(){
-    Num = 100;
-    return Math.abs(Math.floor(Math.random()*Num));
+    let num = [];
+    for (let index = 0; index < 5; index++) {
+        let numero = Math.abs(Math.floor(Math.random()*100));
+        if(!num.includes(numero)){
+            return numero;
+        }
+    }
+    
+}
+
+function indovinaNumeri(){
+    let indovinatiNumeri = [];
+    for (let index = 0; index < 5; index++) {
+        let numeroScelto = parseInt("inserire il numero in posizione"+index+1);
+
+        if(!indovinatiNumeri.includes(numeroScelto)){
+            indovinatiNumeri.push(numeroScelto);
+        }
+        
+    }
+
+    return indovinaNumeri;
 }
 
 
 document.getElementById("genera").addEventListener("click",function(){
-    creaElementi();
+    
+
+
+    creaElementi()
 });
+
+
 
 
 
