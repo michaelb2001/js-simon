@@ -7,30 +7,20 @@ il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 function creaElementi(){
     maxNum = 5;
     let riga = document.getElementById("riga");
-    riga.innerHTML="";
+    
     for (let index = 0; index < maxNum; index++) {
         riga.innerHTML += 
         `
-        <div id="item-${index}" class="blocco col-1 d-flex justify-content-center align-items-center text-center">
+        <div id="item-${index}" class="blocco col-1">
             <span id="elemento-${index}" class="numero">
-                ${generaNumeri()}
             </span>
         </div>
         `;
     }
 }
 
-function generaNumeri(){
-    Num = 100;
-    return Math.abs(Math.floor(Math.random()*Num));
-}
 
-
-document.getElementById("genera").addEventListener("click",function(){
-    creaElementi();
-});
-
-
+creaElementi();
 
 
 
