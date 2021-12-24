@@ -31,10 +31,17 @@ function generaNumeri(){
     
 }
 
-function indovinaNumeri(){
+/*function indovinaNumeri(){
+
+    let blocchi = document.getElementsByClassName("numero");
+    for (let index = 0; index < blocchi.length; index++) {
+        blocchi[index].innerHTML =""; 
+    }
+
     let indovinatiNumeri = [];
-    for (let index = 0; index < 5; index++) {
-        let numeroScelto = parseInt("inserire il numero in posizione"+index+1);
+
+    for (let index = 0; index < 5; index++){
+        let numeroScelto = parseInt(prompt("inserire il numero in posizione"+(index+1)));
 
         if(!indovinatiNumeri.includes(numeroScelto)){
             indovinatiNumeri.push(numeroScelto);
@@ -45,14 +52,39 @@ function indovinaNumeri(){
     return indovinaNumeri;
 }
 
+function chiedi(){
+    setTimeout(indovinaNumeri(),5000);
+};*/
 
 document.getElementById("genera").addEventListener("click",function(){
     
+    creaElementi();
 
+    setTimeout(() => {
+        
+        let blocchi = document.getElementsByClassName("numero");
+        for (let index = 0; index < blocchi.length; index++) {
+            blocchi[index].innerHTML =""; 
+        }
 
-    creaElementi()
+        let indovinatiNumeri = [];
+        setTimeout(() => {
+            for (let index = 0; index < 5; index++){
+                let numeroScelto = parseInt(prompt("inserire il numero in posizione"+(index+1)));
+    
+                if(!indovinatiNumeri.includes(numeroScelto)){
+                    indovinatiNumeri.push(numeroScelto);
+                }
+                
+            }
+
+            alert("hai indovinato"+(indovinatiNumeri.length-1)+"su 5, e i numeri indovinati sono : "+indovinatiNumeri);
+            
+
+        }, 1000);
+        
+    }, 5000);
 });
-
 
 
 
